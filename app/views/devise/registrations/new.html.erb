@@ -1,0 +1,33 @@
+<h2><%= t('auth.register').titleize %></h2>
+<div class="card card-container p-5">
+  <%= render 'shared/error_messages', model: @user %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <div class="form-group">
+      <%= f.label :username, "#{t('auth.username').capitalize}: " %>
+      <%= f.text_field :username, autofocus: true, autocomplete: "email", class: "form-control", style: "width:50%", placeholder: "username" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :email, "#{t('auth.email').capitalize}:"  %>
+      <%= f.email_field :email, autocomplete: "email", class: "form-control", style: "width:50%", placeholder: "email@adresa.sk" %>
+    </div>
+
+    <div class="form-group mt-3">
+      <%= f.label :password, "#{t('auth.password').capitalize}:"  %>
+      <%= f.password_field :password, autocomplete: "new-password", class: "form-control", style: "width:50%"  %>
+    </div>
+
+    <div class="form-group mt-3">
+      <%= f.label :password_confirmation, "#{t('auth.password_confirmation').capitalize }:" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", style: "width:50%"  %>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-2">
+          <%= f.submit t('auth.register').capitalize, class: "btn btn-primary" %>
+      </div>
+      <div class="col-4 pt-1">
+          <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  <% end %>
+</div>

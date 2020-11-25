@@ -1,0 +1,117 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+sk:
+  save: "uložiť"
+  edit: "upraviť"
+  delete: "vymazať"
+  options: "možnosti"
+  slug: "slug"
+  date:
+    order: [ !ruby/symbol day, !ruby/symbol month, !ruby/symbol year ]
+    formats:
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
+    day_names: [Pondelok, Utorok, Streda, Štvrtok, Piatok, Sobota, Nedeľa]
+    month_names: [~, Január, Február, Marec, Apríl, Máj, Jún, Júl, August, September, Október, November, December]
+  auth:
+    username: "používateľské meno"
+    email: "emailová adresa"
+    password: "heslo"
+    password_min_info: " minimálne znakav"
+    password_confirmation: "potvrdenie hesla"
+    register: "registrácia"
+    log_in: "prihlásiť"
+    logout: "odhlásiť"
+    remember_me: "zapamätať si prihlásenie"
+    forgot_your_password: "Zabudol si heslo?"
+    send_me_reset_password_instructions: "Poslať inštrukcie na zmenu hesla"
+  devise:
+      sessions:
+        user:
+          signed_in: 'Vitaj! Teraz si prihlásený.'
+          signed_out: "Úspešne si sa odhlásil zo stránky."
+      registrations:
+        user:
+          signed_up: 'Vitaj! Teraz si registrovaný a prihlásený.'
+      failure:
+        user:
+          unauthenticated: "Na prístup do tejto časti stránky sa musíte prihlásiť."
+          invalid: "Prihlásenie sa nepodarilo. Chybná emailová adresa alebo heslo."
+          not_found_in_database: "Prihlásenie sa nepodarilo. Chybná emailová adresa alebo heslo."
+  will_paginate:
+    previous_label: "predchádzajúci"
+    next_label: "ďaľší"
+    page_gap: "…"
+  nation:
+    nation: "národnosť"
+    nations: "národnosti"
+    flag: "vlajka"
+    add_nation: "pridať národnosť"
+    edit_nation: "upraviť národnosť"
+  author:
+    authors: "autori"
+    add_author: "pridať autora"
+    edit_author: "upraviť autora"   
+    full_name: "celé meno"
+    first_name: "meno"
+    last_name: "priezvisko"
+    birth_day: "dátum narodenia"
+    death_day: "dátum úmrtia" 
+    birth_place: "miesto narodenia"
+    death_place: "miesto úmrtia"
+    photo: "fotografia"
+  book_category:
+    book_category: "kategória kníh"
+    book_categories: "kategórie kníh"
+    title: "názov kategórie"
+    add_book_category: "pridať kategóriu"
+    edit_book_category: "upraviť kategóriu"
+  book:
+    book: "kniha"
+    books: "knihy"
+    name: "názov"
+    original_name: "originálny názov"
+    cover_img: "obal knižky"
+    publish_year: "rok publikovania"
+    about: "o knižke"
+    new_book: "nová knižka"
+    add_book: "pridať knižku"
+  comment:
+    comment: "komentár"
+    comments: "komentáre"
+    add_comment: "pridať komentár"
+    edit_comment: "upraviť komentár"
+    only_signed: "Iba prihlásený užívateľia môžu pridávať komentáre."
+
+
+

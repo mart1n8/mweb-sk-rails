@@ -1,0 +1,33 @@
+<h2><%= t('auth.log_in').titleize %></h2>
+<div class="card card-container p-5">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="form-group">
+      <%= f.label :email, t('auth.email').titleize %>: <br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", style: "width:50%", placeholder: "email@adresa.sk" %>
+    </div>
+
+    <div class="form-group mt-3">
+      <%= f.label :password, t('auth.password').titleize %>: <br />
+      <%= f.password_field :password, autocomplete: "current-password", class: "form-control", style: "width:50%"  %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+        <div class="form-group mt-3">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me, t('auth.remember_me').capitalize %>
+        </div>
+      <% end %>
+
+    <div class="row mt-4">
+      <div class="col-2">
+          <%= f.submit t('auth.log_in').titleize, class: "btn btn-primary" %>
+      </div>
+      <div class="col-4">
+          <%= render "devise/shared/links" %>
+      </div>
+    </div>
+
+  <% end %>
+</div>

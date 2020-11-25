@@ -1,0 +1,59 @@
+body {
+    font-family: "Courier New"
+}
+
+label {
+    font-weight: 600;
+}
+
+.author_block {
+    display: inline-block;
+    width: 20%;
+    height: 18em;
+    padding: .5em 1% 1em 1%;
+    border-radius: 1em;
+    border: 1px solid black;    
+    text-align: center;
+    margin: 3% 1% 5% 1%;
+    vertical-align:top;
+}
+
+.author_block .photo {
+    border-radius: 1em;
+    height: 80% ;
+}
+
+.author_block .link {
+    vertical-align:bottom;
+    font-size: 1.2em;
+    line-height: 1em;
+    padding: .2em 0 .2em 0;
+    height: 4em;
+}
+
+
+.book_block {
+    display: inline-block;
+    width: 20%;
+    height: 18em;
+    padding: .5em 1% 1em 1%;
+    border-radius: 1em;
+    border: 1px solid black;    
+    text-align: center;
+    margin: 3% 1% 5% 1%;
+    vertical-align:top;
+}
+
+.book_block .photo {
+    border-radius: 1em;
+    height: 75% ;
+}
+
+.book_block .link {
+    vertical-align:bottom;
+    font-size: 1.2em;
+    line-height: 1em;
+    padding: .2em 0 .2em 0;
+    height: 4em;
+}
+
