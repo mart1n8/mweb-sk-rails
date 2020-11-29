@@ -1,0 +1,29 @@
+<nav class="container navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">mWeb.sk</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "domov", root_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to t('article.articles'), articles_path, class: "nav-link" %>
+      </li>
+    </ul>
+        <span class="navbar-text">
+        <% if user_signed_in? %>
+            <%= "#{current_user.username} | #{current_user.email} "%>
+            <%= " | "%>
+            <%= link_to t('auth.logout'), destroy_user_session_path, method: "delete" %>
+
+        <% else %>
+             <%= link_to t('auth.log_in'), new_user_session_path %>
+                 <%= " | "%>
+              <%= link_to t('auth.register'), new_user_registration_path %>
+        <% end %>
+    </span>
+  </div>
+</nav>

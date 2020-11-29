@@ -1,0 +1,25 @@
+<h1><%= @article.title %></h1>
+<%= @article.intro_text.html_safe %>
+<%= @article.text.html_safe %>
+<p>
+  <strong>Article category:</strong>
+  <%= @article.article_category_id %>
+</p>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @article.tags %>
+</p>
+
+<p>
+  <strong>Into text:</strong>
+  <%= @article.intro_text %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @article.text %>
+</p>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>

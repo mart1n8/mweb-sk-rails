@@ -1,0 +1,5 @@
+<div class="text-center" style="float:right">
+    <%= link_to "<i class='material-icons md-36'>keyboard_arrow_left</i> <br> #{t('article_category.article_categories')}".html_safe, admin_article_categories_path %>
+</div>
+<h1><%= t('article_category.edit_article_category').capitalize %>: <%= @article_category.name %></h1>
+<%= render 'form', article_category: @article_category, url: admin_edit_article_category_path(@article_category) %>

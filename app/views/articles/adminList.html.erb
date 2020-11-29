@@ -1,0 +1,30 @@
+<h1><%= t('article.articles').capitalize %></h1>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>#</th>
+            <th><%= t('article.title').capitalize %>:</th>
+            <th><%= t('article.category').capitalize %>:</th> 
+            <th><%= material_icon.remove_red_eye.md_18 %></th>
+            <th><%= material_icon.thumb_up_alt.md_18 %></th>
+            <th><%= t('options').capitalize %>:</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @articles.each do |article| %>
+            <tr>
+                <td><%= article.id %></td>
+                <td><%= article.title %></td>
+                <td><%= article.article_category.name %></td>
+                <td><%= article.views %></td>
+                <td><%= article.likes %></td>
+                <td>
+                    <%= link_to material_icon.remove_red_eye, article_path(article) %>
+                    <%= link_to material_icon.edit, edit_article_path(article) %>
+                    <%= link_to material_icon.delete_forever, delete_article_path(article), method: :delete, data: { confirm: 'Skutočne chcete tento článok?' }, style: "color:red"  %>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

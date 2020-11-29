@@ -1,0 +1,17 @@
+<h1><%= t('edit')%> <%= t('auth.user')%></h1>
+<%= form_with(model: @user, url: admin_edit_user_path, local: true) do |form| %>
+  <%= render 'shared/error_messages', model: @user%>
+  <div class="row">
+      <div class="col-4">
+        <%= form.label :roles, t('auth.roles').capitalize %>:
+        <% @user.available_roles.each do |role| %>
+          <input type="checkbox" class="form-control-checkbox" name=":user[:roles][]" id="user[roles][<%= role %>]" value="<%= role %>%"/><label for="user[roles][<%= role %>]"><%= role %></label><br>
+        <% end %>
+    </div>
+  </div >
+  <div class="row mt-4">
+    <div class="col-8 text-center">
+      <%= form.submit t('save').upcase, class: "btn btn-primary" %>
+    </div>
+  </div >
+<% end %>

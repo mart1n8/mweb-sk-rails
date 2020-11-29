@@ -1,0 +1,33 @@
+<%= form_with(model: article, url: url, local: true) do |form| %>
+  <%= render "shared/error_messages", model: article %>
+  <div class="row">
+    <div class="col-6">
+      <%= form.label :title, t('article.title').capitalize %>
+      <%= form.text_field :title, class: "form-control pr-5" %>
+    </div>
+    <div class="col-6">
+      <%= form.label :article_category_id, t('article.category').capitalize %>
+      <%= form.collection_select(:article_category_id, ArticleCategory.all, :id, :name, {:selected => article.article_category_id}, { class: "form-control"}) %>
+      <%= form.label :tags, t('article.tags'), class: "mt-3" %>
+      <%= form.text_field :tags, class: "form-control" %>
+      <small>delené čiarkou: hry, progromovanie,</small>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <%= form.label :intro_text, t('article.intro_text').capitalize %>
+      <%= form.cktext_area :intro_text, class: 'form-control', ckeditor: { language: 'sk'} %>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-12">
+      <%= form.label :text, t('article.text').capitalize  %>
+      <%= form.cktext_area :text, class: 'form-control', ckeditor: { language: 'sk'} %>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-12 text-center">
+    <%= form.submit t('save').upcase, class: "btn btn-sm btn-primary" %>
+    </div>
+  </div>
+<% end %>
