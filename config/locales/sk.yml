@@ -35,6 +35,7 @@ sk:
   delete: "vymazať"
   options: "možnosti"
   slug: "slug"
+  add: "pridať"
   date:
     order: [ !ruby/symbol day, !ruby/symbol month, !ruby/symbol year ]
     formats:
@@ -72,46 +73,12 @@ sk:
     previous_label: "predchádzajúci"
     next_label: "ďaľší"
     page_gap: "…"
-  nation:
-    nation: "národnosť"
-    nations: "národnosti"
-    flag: "vlajka"
-    add_nation: "pridať národnosť"
-    edit_nation: "upraviť národnosť"
-  author:
-    authors: "autori"
-    add_author: "pridať autora"
-    edit_author: "upraviť autora"   
-    full_name: "celé meno"
-    first_name: "meno"
-    last_name: "priezvisko"
-    birth_day: "dátum narodenia"
-    death_day: "dátum úmrtia" 
-    birth_place: "miesto narodenia"
-    death_place: "miesto úmrtia"
-    photo: "fotografia"
-  book_category:
-    book_category: "kategória kníh"
-    book_categories: "kategórie kníh"
-    title: "názov kategórie"
-    add_book_category: "pridať kategóriu"
-    edit_book_category: "upraviť kategóriu"
-  book:
-    book: "kniha"
-    books: "knihy"
+  article_category:
+    article_category: "kategória článkov"
+    article_categories: "kategórie článkov"
+    add_article_category: "pridať kategóriu článkov"
+    edit_article_category: "upraviť kategóriu článkov"
     name: "názov"
-    original_name: "originálny názov"
-    cover_img: "obal knižky"
-    publish_year: "rok publikovania"
-    about: "o knižke"
-    new_book: "nová knižka"
-    add_book: "pridať knižku"
-  comment:
-    comment: "komentár"
-    comments: "komentáre"
-    add_comment: "pridať komentár"
-    edit_comment: "upraviť komentár"
-    only_signed: "Iba prihlásený užívateľia môžu pridávať komentáre."
-
+    logo: "logo"
 
 

@@ -1,4 +1,5 @@
 body {
+    background-color: lightgrey;
     font-family: "Courier New"
 }
 
@@ -57,3 +58,8 @@ label {
     height: 4em;
 }
 
+main{
+    background-color: white;
+    padding-bottom: 10em;
+    border-radius: 0em 0em 3em 3em;
+}

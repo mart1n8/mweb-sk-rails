@@ -30,7 +30,9 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'carrierwave', '~> 2.0'
 gem 'material_icons'
 gem 'custom_error_message', '~> 1.1', '>= 1.1.1'
-
+gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'mini_magick'
+gem 'petergate', '~> 2.0', '>= 2.0.1'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

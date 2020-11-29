@@ -1,17 +1,22 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <title>MwebSkRails</title>
+    <title>mWeb.sk</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <!-- CSS STYLES -->
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- JS -->
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <%= javascript_include_tag Ckeditor.cdn_url %>
 
-  <body>
-         <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+  </head>
+  <body class="">
+    <%= render "layouts/nav"%>
+
+<main role="main" class="container pt-3">
+    <%= render "layouts/messages"%>
     <%= yield %>
-  </body>
+</main><!-- /.container -->
+</body>
 </html>
