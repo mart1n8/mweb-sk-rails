@@ -1,17 +1,28 @@
 <nav class="container navbar navbar-expand-md navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">mWeb.sk</a>
+  <a class="navbar-brand" href="<%= root_path %>">mWeb.sk</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to "domov", root_path, class: "nav-link" %>
-      </li>
       <li class="nav-item">
         <%= link_to t('article.articles'), articles_path, class: "nav-link" %>
       </li>
+      <% if user_signed_in? %>
+        <% if current_user.has_roles?(:editors) %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= t('auth.editor') %></a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
     </ul>
         <span class="navbar-text">
         <% if user_signed_in? %>

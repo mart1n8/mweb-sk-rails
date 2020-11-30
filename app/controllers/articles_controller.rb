@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :delete]
-  access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
+  access [:all, :user] => [:show, :index], [:editor, :admin] => [:all]
 
   # GET /articles
   def index

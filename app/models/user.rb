@@ -4,7 +4,7 @@ class User < ApplicationRecord
   ## The :user role is added by default and shouldn't be included in this list.             ##
   ## The :root_admin can access any page regardless of access settings. Use with caution!   ##
   ## The multiple option can be set to true if you need users to have multiple roles.       ##
-  petergate(roles: [:admin, :editor], multiple: true)                                      ##
+  petergate(roles: [:root_admin, :admin, :editor], multiple: false)                                      ##
   ############################################################################################ 
  
 
@@ -18,19 +18,10 @@ class User < ApplicationRecord
 
   validates :email, presence: { message: "^Emailová adresa nemôže byť prázdna." }
   validates :email, uniqueness: { message: "^Emailová adresa sa už v databáze nachádza." }
-  
-  validates :password, length: { in: 6..20, message: "^Heslo musí byť dlhé 6 až 20 zanakov." }
+
   validates :password, confirmation: { message: "^Heslo a potvrdenie hesla sa musia zhodovať." }
 
-
-
-  def available_roles_hash
-    available_roles_hash  = Hash.new
-        self.available_roles.collect do |role|
-          available_roles_hash[role] = role
-        end
-        return available_roles_hash
-  end
+  has_many :articles, dependent: :destroy
 
 
 end

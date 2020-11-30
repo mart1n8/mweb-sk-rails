@@ -1,13 +1,15 @@
-<h1><%= t('edit')%> <%= t('auth.user')%></h1>
-<%= form_with(model: @user, url: admin_edit_user_path, local: true) do |form| %>
+<h1><%= t('auth.edit_user').capitalize %>: <%= @user.username %></h1>
   <%= render 'shared/error_messages', model: @user%>
+<%= form_with(model: @user, url: admin_edit_user_path, local: true) do |form| %>
   <div class="row">
       <div class="col-4">
         <%= form.label :roles, t('auth.roles').capitalize %>:
-        <% @user.available_roles.each do |role| %>
-          <input type="checkbox" class="form-control-checkbox" name=":user[:roles][]" id="user[roles][<%= role %>]" value="<%= role %>%"/><label for="user[roles][<%= role %>]"><%= role %></label><br>
-        <% end %>
-    </div>
+        <select name="user[roles]" id="user_roles" class="form-control">
+          <% User::ROLES.each do |role| %>
+            <option value="<%= role %>" <%= "selected" if @user.roles.first == role %>><%= role %></option>
+          <% end %>
+        </select>
+     </div>
   </div >
   <div class="row mt-4">
     <div class="col-8 text-center">

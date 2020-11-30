@@ -1,5 +1,6 @@
 class Admin::UsersController < ApplicationController
     before_action :set_user, only: [:edit, :update, :destroy]
+    access [:admin] =>  [:all]
 
     def index
         @users = User.order(username: :asc).paginate(page: params[:page], per_page: 20)
@@ -10,13 +11,19 @@ class Admin::UsersController < ApplicationController
     end
 
     def update
-        @user.roles = params[:user][:roles]
-        @user.save
-        respond_to do |format|
-            flash[:notice] = "Užívateľ  bol vymazaný."
-            format.html { redirect_to admin_edit_user_path(@user) }
-            format.json { head :no_content }
-        end
+    @user.roles = params[:user][:roles]
+    respond_to do |format|
+      if @user.save
+        flash[:notice] = "Užívateľ bol upravený."
+        format.html { redirect_to admin_edit_user_path(@user) }
+        format.json { render :show, status: :created, location: @user }
+      else
+        format.html { render :edit }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+
+
     end
 
     def destroy

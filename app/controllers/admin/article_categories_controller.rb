@@ -1,5 +1,7 @@
 class Admin::ArticleCategoriesController < ApplicationController
   before_action :set_article_category, only: [:show, :edit, :update, :destroy]
+  access [:editor, :admin] =>  [:all]
+
 
   # GET /admin/article_categories
   # GET /admin/article_categories.json
