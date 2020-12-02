@@ -19,7 +19,9 @@ class User < ApplicationRecord
   validates :email, presence: { message: "^Emailová adresa nemôže byť prázdna." }
   validates :email, uniqueness: { message: "^Emailová adresa sa už v databáze nachádza." }
 
+  validates :password, presence: { message: "^Heslo nemôže byť prázdne." }
   validates :password, confirmation: { message: "^Heslo a potvrdenie hesla sa musia zhodovať." }
+  validates :password, length: { in: 6..20, message: "^Heslo musí byť dlhé 6 až 20 znakov." }
 
   has_many :articles, dependent: :destroy
 

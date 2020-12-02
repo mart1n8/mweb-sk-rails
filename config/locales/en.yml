@@ -6,6 +6,7 @@ en:
   options: "možnosti"
   slug: "slug"
   add: "pridať"
+  settings: "nastavenia"
   date:
     order: [ !ruby/symbol day, !ruby/symbol month, !ruby/symbol year ]
     formats:
@@ -31,6 +32,12 @@ en:
     roles: "role"
     role: "rola"
     edit_user: "upraviť užívateľa"
+    profile: "profil"
+    new_password: "nové heslo"
+    new_password_confirmation: "potvrdenie nového hesla"
+    current_password: "súčasné heslo"
+    cancel_registration: "zrušiť účet"
+    cancel_my_registration: "zrušiť môj účet"
   devise:
       sessions:
         user:
